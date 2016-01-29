@@ -15,14 +15,14 @@ var PixelParser = function(imageData){
 }
 
 PixelParser.prototype.getIndex = function(x, y){
-  return (x + y * width) * 4
+  return (x + y * this.width) * 4
 }
 
 
 PixelParser.prototype.getColor = function(x,y){
-  let index = this.getIndex(x, y)
-  let end = index + 4
-  let chunk = this.data.slice(index, end)
+  var index = this.getIndex(x, y)
+  var end = index + 4
+  var chunk = this.data.slice(index, end)
   return toColorObj(chunk)
 }
 
@@ -34,7 +34,7 @@ PixelParser.prototype.parse = function(){
   for(var y = 0; y < h; y++){
     var row = []
     for(var x = 0; x < w; x++){
-      var cell = fn(x, y)
+      var cell = this.getColor(x, y)
       row[x] = cell
     }
     cols[y] = row

@@ -1,4 +1,4 @@
-# pixelbank
+# PixelBank
 
 Parser for [ImageData](https://developer.mozilla.org/en-US/docs/Web/API/ImageData)
 
@@ -39,7 +39,8 @@ parse(imageData)
 
 ## `parse(imageData)`
 Parse `imageData`.
-[Uint8ClampedArray](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray) converted like below
+
+[Uint8ClampedArray](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray) is converted like this
 
 ```js
 {

@@ -16,12 +16,25 @@ parse(imageData)
 // ]
 
 ```
-or
+or 
 
 ```js
 var PixelBank = require("pixelbank").PixelBank
-PixelBank.parse(imageData)
+var pixelBank = new PixelBank(imageData)
+pixelBank.parse()
 ```
+
+If you use ES2016 module
+
+```js
+import parse, { PixelBank } from "pixelbank"
+let pixelBank = new PixelBank(imageData)
+pixelBank.parse()
+// or
+parse(imageData)
+```
+
+
 # API
 
 ## `parse(imageData)`

@@ -6,8 +6,9 @@
   "scripts": {
     "test": "mocha"
   },
+  "files": ["index.js"],
   "keywords": ["canvas", "imageData", "image-data"],
-  "author": "",
+  "author": "inuscript",
   "license": "ISC",
   "devDependencies": {
     "mocha": "^2.4.5",

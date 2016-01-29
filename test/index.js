@@ -1,6 +1,6 @@
 var assert = require("assert")
 var sample = require("./sample")
-var parse = require("../index").parse
+var parse = require("../index")
 describe("parse", () => {
   var expect = [ 
     { top: 0, left: 0, color: { r: 255, g: 13, b: 0, a: 255 } },

@@ -1,10 +1,10 @@
 
-var toColorObj = function(chunk){
+var toColorObj = function(clamp){
   return {
-    r: chunk[0],
-    g: chunk[1],
-    b: chunk[2],
-    a: chunk[3],
+    r: clamp[0],
+    g: clamp[1],
+    b: clamp[2],
+    a: clamp[3],
   }
 }
 
@@ -22,24 +22,25 @@ PixelParser.prototype.getIndex = function(x, y){
 PixelParser.prototype.getColor = function(x,y){
   var index = this.getIndex(x, y)
   var end = index + 4
-  var chunk = this.data.slice(index, end)
-  return toColorObj(chunk)
+  var clamp = this.data.slice(index, end)
+  return toColorObj(clamp)
 }
 
 PixelParser.prototype.parse = function(){
   // TODO
-  var cols = []
+  var pixels = []
   var h = this.height
   var w = this.width
   for(var y = 0; y < h; y++){
-    var row = []
     for(var x = 0; x < w; x++){
-      var cell = this.getColor(x, y)
-      row[x] = cell
+      pixels.push({
+        top: y,
+        left: x,
+        color: this.getColor(x, y)
+      })
     }
-    cols[y] = row
   }
-  return cols
+  return pixels
 }
 
 var parse = function(imageData){

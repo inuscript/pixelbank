@@ -8,25 +8,25 @@ var toColorObj = function(clamp){
   }
 }
 
-var PixelParser = function(imageData){
+var PixelBank = function(imageData){
   this.data = imageData.data
   this.width = imageData.width
   this.height = imageData.height
 }
 
-PixelParser.prototype.getIndex = function(x, y){
+PixelBank.prototype.getIndex = function(x, y){
   return (x + y * this.width) * 4
 }
 
 
-PixelParser.prototype.getColor = function(x,y){
+PixelBank.prototype.getColor = function(x,y){
   var index = this.getIndex(x, y)
   var end = index + 4
   var clamp = this.data.slice(index, end)
   return toColorObj(clamp)
 }
 
-PixelParser.prototype.parse = function(){
+PixelBank.prototype.parse = function(){
   // TODO
   var pixels = []
   var h = this.height
@@ -44,9 +44,9 @@ PixelParser.prototype.parse = function(){
 }
 
 var parse = function(imageData){
-  return new PixelParser(imageData).parse()
+  return new PixelBank(imageData).parse()
 }
 
 module.exports = parse
 module.exports.parse = parse
-module.exports.PixelParser = PixelParser
+module.exports.PixelBank = PixelBank

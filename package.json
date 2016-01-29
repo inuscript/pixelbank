@@ -1,12 +1,12 @@
 {
-  "name": "parse-image-data",
+  "name": "pixelbank",
   "version": "0.0.1",
-  "description": "",
+  "description": "Canvas ImageData parser",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-  "keywords": [],
+  "keywords": ["canvas", "imageData", "image-data"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
